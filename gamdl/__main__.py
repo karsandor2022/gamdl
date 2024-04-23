@@ -1,3 +1,3 @@
-from .cli import main
+from bin.cli import main
 
 main()
