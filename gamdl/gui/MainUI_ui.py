@@ -31,88 +31,88 @@ class Ui_MainWindows(object):
         self.horizontalLayout = QHBoxLayout()
         self.horizontalLayout.setObjectName(u"horizontalLayout")
         self.horizontalLayout.setSizeConstraint(QLayout.SizeConstraint.SetDefaultConstraint)
-        self.verticalLayout = QVBoxLayout()
-        self.verticalLayout.setObjectName(u"verticalLayout")
-        self.verticalLayout.setSizeConstraint(QLayout.SizeConstraint.SetFixedSize)
-        self.label_2 = QLabel(MainWindows)
-        self.label_2.setObjectName(u"label_2")
+        self.Name_and_Settings = QVBoxLayout()
+        self.Name_and_Settings.setObjectName(u"Name_and_Settings")
+        self.Name_and_Settings.setSizeConstraint(QLayout.SizeConstraint.SetFixedSize)
+        self.name = QLabel(MainWindows)
+        self.name.setObjectName(u"name")
         font = QFont()
         font.setFamilies([u"Arial"])
         font.setPointSize(20)
-        self.label_2.setFont(font)
+        self.name.setFont(font)
 
-        self.verticalLayout.addWidget(self.label_2)
+        self.Name_and_Settings.addWidget(self.name)
 
-        self.horizontalLayout_3 = QHBoxLayout()
-        self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
+        self.apple_link = QHBoxLayout()
+        self.apple_link.setObjectName(u"apple_link")
         self.apple_playlistLabel = QLabel(MainWindows)
         self.apple_playlistLabel.setObjectName(u"apple_playlistLabel")
 
-        self.horizontalLayout_3.addWidget(self.apple_playlistLabel)
+        self.apple_link.addWidget(self.apple_playlistLabel)
 
-        self.apple_link = QLineEdit(MainWindows)
-        self.apple_link.setObjectName(u"apple_link")
-        self.apple_link.setInputMethodHints(Qt.InputMethodHint.ImhNone)
+        self.apple_link_text = QLineEdit(MainWindows)
+        self.apple_link_text.setObjectName(u"apple_link_text")
+        self.apple_link_text.setInputMethodHints(Qt.InputMethodHint.ImhNone)
 
-        self.horizontalLayout_3.addWidget(self.apple_link)
+        self.apple_link.addWidget(self.apple_link_text)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_3)
+        self.Name_and_Settings.addLayout(self.apple_link)
 
-        self.horizontalLayout_4 = QHBoxLayout()
-        self.horizontalLayout_4.setObjectName(u"horizontalLayout_4")
-        self.dontskipvideo = QLabel(MainWindows)
-        self.dontskipvideo.setObjectName(u"dontskipvideo")
+        self.dont_skip_video = QHBoxLayout()
+        self.dont_skip_video.setObjectName(u"dont_skip_video")
+        self.dont_skip_video_checkbox = QLabel(MainWindows)
+        self.dont_skip_video_checkbox.setObjectName(u"dont_skip_video_checkbox")
 
-        self.horizontalLayout_4.addWidget(self.dontskipvideo)
+        self.dont_skip_video.addWidget(self.dont_skip_video_checkbox)
 
         self.dont_skip_video_download = QCheckBox(MainWindows)
         self.dont_skip_video_download.setObjectName(u"dont_skip_video_download")
 
-        self.horizontalLayout_4.addWidget(self.dont_skip_video_download)
+        self.dont_skip_video.addWidget(self.dont_skip_video_download)
 
-        self.horizontalLayout_4.setStretch(0, 1)
+        self.dont_skip_video.setStretch(0, 1)
 
-        self.verticalLayout.addLayout(self.horizontalLayout_4)
+        self.Name_and_Settings.addLayout(self.dont_skip_video)
 
-        self.horizontalLayout_5 = QHBoxLayout()
-        self.horizontalLayout_5.setObjectName(u"horizontalLayout_5")
-        self.label_4 = QLabel(MainWindows)
-        self.label_4.setObjectName(u"label_4")
-
-        self.horizontalLayout_5.addWidget(self.label_4)
-
-        self.save_cover = QCheckBox(MainWindows)
+        self.save_cover = QHBoxLayout()
         self.save_cover.setObjectName(u"save_cover")
+        self.save_cover_checkbox = QLabel(MainWindows)
+        self.save_cover_checkbox.setObjectName(u"save_cover_checkbox")
 
-        self.horizontalLayout_5.addWidget(self.save_cover)
+        self.save_cover.addWidget(self.save_cover_checkbox)
 
-        self.horizontalLayout_5.setStretch(0, 1)
+        self.save_cover_label = QCheckBox(MainWindows)
+        self.save_cover_label.setObjectName(u"save_cover_label")
 
-        self.verticalLayout.addLayout(self.horizontalLayout_5)
+        self.save_cover.addWidget(self.save_cover_label)
 
-        self.horizontalLayout_6 = QHBoxLayout()
-        self.horizontalLayout_6.setObjectName(u"horizontalLayout_6")
-        self.label_5 = QLabel(MainWindows)
-        self.label_5.setObjectName(u"label_5")
+        self.save_cover.setStretch(0, 1)
 
-        self.horizontalLayout_6.addWidget(self.label_5)
+        self.Name_and_Settings.addLayout(self.save_cover)
 
-        self.overwrite_song = QCheckBox(MainWindows)
-        self.overwrite_song.setObjectName(u"overwrite_song")
+        self.overwrite = QHBoxLayout()
+        self.overwrite.setObjectName(u"overwrite")
+        self.overwrite_label = QLabel(MainWindows)
+        self.overwrite_label.setObjectName(u"overwrite_label")
 
-        self.horizontalLayout_6.addWidget(self.overwrite_song)
+        self.overwrite.addWidget(self.overwrite_label)
 
-        self.horizontalLayout_6.setStretch(0, 1)
+        self.overwrite_song_checkbox = QCheckBox(MainWindows)
+        self.overwrite_song_checkbox.setObjectName(u"overwrite_song_checkbox")
 
-        self.verticalLayout.addLayout(self.horizontalLayout_6)
+        self.overwrite.addWidget(self.overwrite_song_checkbox)
 
-        self.horizontalLayout_7 = QHBoxLayout()
-        self.horizontalLayout_7.setObjectName(u"horizontalLayout_7")
-        self.label_6 = QLabel(MainWindows)
-        self.label_6.setObjectName(u"label_6")
+        self.overwrite.setStretch(0, 1)
 
-        self.horizontalLayout_7.addWidget(self.label_6)
+        self.Name_and_Settings.addLayout(self.overwrite)
+
+        self.lyrics = QHBoxLayout()
+        self.lyrics.setObjectName(u"lyrics")
+        self.lyrics_label = QLabel(MainWindows)
+        self.lyrics_label.setObjectName(u"lyrics_label")
+
+        self.lyrics.addWidget(self.lyrics_label)
 
         self.lyrics_type = QComboBox(MainWindows)
         self.lyrics_type.addItem("")
@@ -120,50 +120,50 @@ class Ui_MainWindows(object):
         self.lyrics_type.addItem("")
         self.lyrics_type.setObjectName(u"lyrics_type")
 
-        self.horizontalLayout_7.addWidget(self.lyrics_type)
+        self.lyrics.addWidget(self.lyrics_type)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_7)
+        self.Name_and_Settings.addLayout(self.lyrics)
 
-        self.horizontalLayout_2 = QHBoxLayout()
-        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.config = QPushButton(MainWindows)
-        self.config.setObjectName(u"config")
+        self.config_and_search = QHBoxLayout()
+        self.config_and_search.setObjectName(u"config_and_search")
+        self.config_button = QPushButton(MainWindows)
+        self.config_button.setObjectName(u"config_button")
 
-        self.horizontalLayout_2.addWidget(self.config)
+        self.config_and_search.addWidget(self.config_button)
 
-        self.search = QPushButton(MainWindows)
-        self.search.setObjectName(u"search")
+        self.search_button = QPushButton(MainWindows)
+        self.search_button.setObjectName(u"search_button")
 
-        self.horizontalLayout_2.addWidget(self.search)
+        self.config_and_search.addWidget(self.search_button)
 
 
-        self.verticalLayout.addLayout(self.horizontalLayout_2)
+        self.Name_and_Settings.addLayout(self.config_and_search)
 
-        self.verticalLayout.setStretch(0, 1)
-        self.verticalLayout.setStretch(1, 1)
-        self.verticalLayout.setStretch(2, 1)
-        self.verticalLayout.setStretch(3, 1)
-        self.verticalLayout.setStretch(4, 1)
-        self.verticalLayout.setStretch(5, 1)
+        self.Name_and_Settings.setStretch(0, 1)
+        self.Name_and_Settings.setStretch(1, 1)
+        self.Name_and_Settings.setStretch(2, 1)
+        self.Name_and_Settings.setStretch(3, 1)
+        self.Name_and_Settings.setStretch(4, 1)
+        self.Name_and_Settings.setStretch(5, 1)
 
-        self.horizontalLayout.addLayout(self.verticalLayout)
+        self.horizontalLayout.addLayout(self.Name_and_Settings)
 
-        self.verticalLayout_2 = QVBoxLayout()
-        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
-        self.listWidget = QListWidget(MainWindows)
-        self.listWidget.setObjectName(u"listWidget")
-
-        self.verticalLayout_2.addWidget(self.listWidget)
-
-        self.download_list = QPushButton(MainWindows)
+        self.Download = QVBoxLayout()
+        self.Download.setObjectName(u"Download")
+        self.download_list = QListWidget(MainWindows)
         self.download_list.setObjectName(u"download_list")
-        self.download_list.setFlat(False)
 
-        self.verticalLayout_2.addWidget(self.download_list)
+        self.Download.addWidget(self.download_list)
+
+        self.download_list_button = QPushButton(MainWindows)
+        self.download_list_button.setObjectName(u"download_list_button")
+        self.download_list_button.setFlat(False)
+
+        self.Download.addWidget(self.download_list_button)
 
 
-        self.horizontalLayout.addLayout(self.verticalLayout_2)
+        self.horizontalLayout.addLayout(self.Download)
 
 
         self.horizontalLayout_8.addLayout(self.horizontalLayout)
@@ -176,21 +176,21 @@ class Ui_MainWindows(object):
 
     def retranslateUi(self, MainWindows):
         MainWindows.setWindowTitle(QCoreApplication.translate("MainWindows", u"GAMDL", None))
-        self.label_2.setText(QCoreApplication.translate("MainWindows", u"Glomatico's Apple Music Downloader", None))
+        self.name.setText(QCoreApplication.translate("MainWindows", u"Glomatico's Apple Music Downloader", None))
         self.apple_playlistLabel.setText(QCoreApplication.translate("MainWindows", u"Link:", None))
-        self.dontskipvideo.setText(QCoreApplication.translate("MainWindows", u"Don't Skip Music Video In Download", None))
+        self.dont_skip_video_checkbox.setText(QCoreApplication.translate("MainWindows", u"Don't Skip Music Video In Download", None))
         self.dont_skip_video_download.setText("")
-        self.label_4.setText(QCoreApplication.translate("MainWindows", u"Save cover as a seprate file", None))
-        self.save_cover.setText("")
-        self.label_5.setText(QCoreApplication.translate("MainWindows", u"Overwrite download songs", None))
-        self.overwrite_song.setText("")
-        self.label_6.setText(QCoreApplication.translate("MainWindows", u"Lyrics", None))
+        self.save_cover_checkbox.setText(QCoreApplication.translate("MainWindows", u"Save cover as a seprate file", None))
+        self.save_cover_label.setText("")
+        self.overwrite_label.setText(QCoreApplication.translate("MainWindows", u"Overwrite download songs", None))
+        self.overwrite_song_checkbox.setText("")
+        self.lyrics_label.setText(QCoreApplication.translate("MainWindows", u"Lyrics", None))
         self.lyrics_type.setItemText(0, QCoreApplication.translate("MainWindows", u"All Lyrics", None))
         self.lyrics_type.setItemText(1, QCoreApplication.translate("MainWindows", u"Synced Lyrics", None))
         self.lyrics_type.setItemText(2, QCoreApplication.translate("MainWindows", u"No Lyrics", None))
 
-        self.config.setText(QCoreApplication.translate("MainWindows", u"Config", None))
-        self.search.setText(QCoreApplication.translate("MainWindows", u"Search", None))
-        self.download_list.setText(QCoreApplication.translate("MainWindows", u"Download", None))
+        self.config_button.setText(QCoreApplication.translate("MainWindows", u"Config", None))
+        self.search_button.setText(QCoreApplication.translate("MainWindows", u"Search", None))
+        self.download_list_button.setText(QCoreApplication.translate("MainWindows", u"Download", None))
     # retranslateUi
 

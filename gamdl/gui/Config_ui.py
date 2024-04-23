@@ -175,6 +175,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_11.addWidget(self.lineEdit)
 
+        self.horizontalLayout_11.setStretch(0, 1)
+        self.horizontalLayout_11.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_11)
 
@@ -190,6 +192,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_12.addWidget(self.lineEdit_2)
 
+        self.horizontalLayout_12.setStretch(0, 1)
+        self.horizontalLayout_12.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_12)
 
@@ -205,6 +209,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_13.addWidget(self.lineEdit_3)
 
+        self.horizontalLayout_13.setStretch(0, 1)
+        self.horizontalLayout_13.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_13)
 
@@ -220,6 +226,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_14.addWidget(self.lineEdit_4)
 
+        self.horizontalLayout_14.setStretch(0, 1)
+        self.horizontalLayout_14.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_14)
 
@@ -235,6 +243,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_15.addWidget(self.lineEdit_5)
 
+        self.horizontalLayout_15.setStretch(0, 1)
+        self.horizontalLayout_15.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_15)
 
@@ -250,6 +260,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_16.addWidget(self.lineEdit_6)
 
+        self.horizontalLayout_16.setStretch(0, 1)
+        self.horizontalLayout_16.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_16)
 
@@ -265,6 +277,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_17.addWidget(self.lineEdit_7)
 
+        self.horizontalLayout_17.setStretch(0, 1)
+        self.horizontalLayout_17.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_17)
 
@@ -280,6 +294,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_18.addWidget(self.lineEdit_8)
 
+        self.horizontalLayout_18.setStretch(0, 1)
+        self.horizontalLayout_18.setStretch(1, 2)
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_18)
 
@@ -507,6 +523,8 @@ class Ui_Config(object):
 
         self.label_22 = QLabel(Config)
         self.label_22.setObjectName(u"label_22")
+        self.label_22.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.label_22.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
         self.gridLayout.addWidget(self.label_22, 1, 1, 1, 1)
 
