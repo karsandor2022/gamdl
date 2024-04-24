@@ -15,30 +15,52 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QGridLayout,
-    QHBoxLayout, QLabel, QLineEdit, QScrollArea,
-    QSizePolicy, QTabWidget, QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QCheckBox, QComboBox, QDialog,
+    QGridLayout, QHBoxLayout, QLabel, QLineEdit,
+    QScrollArea, QSizePolicy, QTabWidget, QVBoxLayout,
+    QWidget)
 
-class Ui_Config(object):
-    def setupUi(self, Config):
-        if not Config.objectName():
-            Config.setObjectName(u"Config")
-        Config.resize(520, 377)
-        Config.setMinimumSize(QSize(520, 360))
-        self.gridLayout = QGridLayout(Config)
+class Ui_Configuration(object):
+    def setupUi(self, Configuration):
+        if not Configuration.objectName():
+            Configuration.setObjectName(u"Configuration")
+        Configuration.resize(640, 360)
+        Configuration.setMinimumSize(QSize(640, 360))
+        self.gridLayout = QGridLayout(Configuration)
         self.gridLayout.setObjectName(u"gridLayout")
-        self.tabWidget = QTabWidget(Config)
+        self.version = QHBoxLayout()
+        self.version.setObjectName(u"version")
+        self.version_text = QLabel(Configuration)
+        self.version_text.setObjectName(u"version_text")
+        self.version_text.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
+        self.version_text.setAlignment(Qt.AlignmentFlag.AlignRight|Qt.AlignmentFlag.AlignTrailing|Qt.AlignmentFlag.AlignVCenter)
+
+        self.version.addWidget(self.version_text)
+
+        self.version_label = QLabel(Configuration)
+        self.version_label.setObjectName(u"version_label")
+
+        self.version.addWidget(self.version_label)
+
+
+        self.gridLayout.addLayout(self.version, 1, 1, 1, 1)
+
+        self.tabWidget = QTabWidget(Configuration)
         self.tabWidget.setObjectName(u"tabWidget")
-        self.tab_3 = QWidget()
-        self.tab_3.setObjectName(u"tab_3")
-        self.horizontalLayout = QHBoxLayout(self.tab_3)
+        self.tabWidget.setMinimumSize(QSize(0, 0))
+        self.Common_tab = QWidget()
+        self.Common_tab.setObjectName(u"Common_tab")
+        self.horizontalLayout = QHBoxLayout(self.Common_tab)
         self.horizontalLayout.setObjectName(u"horizontalLayout")
-        self.scrollArea = QScrollArea(self.tab_3)
+        self.scrollArea = QScrollArea(self.Common_tab)
         self.scrollArea.setObjectName(u"scrollArea")
+        self.scrollArea.setMaximumSize(QSize(500, 16777215))
+        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea.setWidgetResizable(True)
+        self.scrollArea.setAlignment(Qt.AlignmentFlag.AlignCenter)
         self.scrollAreaWidgetContents = QWidget()
         self.scrollAreaWidgetContents.setObjectName(u"scrollAreaWidgetContents")
-        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 448, 308))
+        self.scrollAreaWidgetContents.setGeometry(QRect(0, 0, 498, 269))
         self.verticalLayout = QVBoxLayout(self.scrollAreaWidgetContents)
         self.verticalLayout.setObjectName(u"verticalLayout")
         self.horizontalLayout_4 = QHBoxLayout()
@@ -150,17 +172,18 @@ class Ui_Config(object):
 
         self.horizontalLayout.addWidget(self.scrollArea)
 
-        self.tabWidget.addTab(self.tab_3, "")
-        self.tab_4 = QWidget()
-        self.tab_4.setObjectName(u"tab_4")
-        self.horizontalLayout_2 = QHBoxLayout(self.tab_4)
+        self.tabWidget.addTab(self.Common_tab, "")
+        self.Path_Tab = QWidget()
+        self.Path_Tab.setObjectName(u"Path_Tab")
+        self.horizontalLayout_2 = QHBoxLayout(self.Path_Tab)
         self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
-        self.scrollArea_2 = QScrollArea(self.tab_4)
+        self.scrollArea_2 = QScrollArea(self.Path_Tab)
         self.scrollArea_2.setObjectName(u"scrollArea_2")
+        self.scrollArea_2.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAsNeeded)
         self.scrollArea_2.setWidgetResizable(True)
         self.scrollAreaWidgetContents_2 = QWidget()
         self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
-        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 448, 278))
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 596, 269))
         self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_2.setObjectName(u"verticalLayout_2")
         self.horizontalLayout_11 = QHBoxLayout()
@@ -282,38 +305,22 @@ class Ui_Config(object):
 
         self.verticalLayout_2.addLayout(self.horizontalLayout_17)
 
-        self.horizontalLayout_18 = QHBoxLayout()
-        self.horizontalLayout_18.setObjectName(u"horizontalLayout_18")
-        self.label_15 = QLabel(self.scrollAreaWidgetContents_2)
-        self.label_15.setObjectName(u"label_15")
-
-        self.horizontalLayout_18.addWidget(self.label_15)
-
-        self.lineEdit_8 = QLineEdit(self.scrollAreaWidgetContents_2)
-        self.lineEdit_8.setObjectName(u"lineEdit_8")
-
-        self.horizontalLayout_18.addWidget(self.lineEdit_8)
-
-        self.horizontalLayout_18.setStretch(0, 1)
-        self.horizontalLayout_18.setStretch(1, 2)
-
-        self.verticalLayout_2.addLayout(self.horizontalLayout_18)
-
         self.scrollArea_2.setWidget(self.scrollAreaWidgetContents_2)
 
         self.horizontalLayout_2.addWidget(self.scrollArea_2)
 
-        self.tabWidget.addTab(self.tab_4, "")
-        self.tab_6 = QWidget()
-        self.tab_6.setObjectName(u"tab_6")
-        self.horizontalLayout_25 = QHBoxLayout(self.tab_6)
+        self.tabWidget.addTab(self.Path_Tab, "")
+        self.Templates_tab = QWidget()
+        self.Templates_tab.setObjectName(u"Templates_tab")
+        self.Templates_tab.setMinimumSize(QSize(0, 0))
+        self.horizontalLayout_25 = QHBoxLayout(self.Templates_tab)
         self.horizontalLayout_25.setObjectName(u"horizontalLayout_25")
-        self.scrollArea_4 = QScrollArea(self.tab_6)
+        self.scrollArea_4 = QScrollArea(self.Templates_tab)
         self.scrollArea_4.setObjectName(u"scrollArea_4")
         self.scrollArea_4.setWidgetResizable(True)
         self.scrollAreaWidgetContents_4 = QWidget()
         self.scrollAreaWidgetContents_4.setObjectName(u"scrollAreaWidgetContents_4")
-        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 448, 264))
+        self.scrollAreaWidgetContents_4.setGeometry(QRect(0, 0, 596, 269))
         self.verticalLayout_4 = QVBoxLayout(self.scrollAreaWidgetContents_4)
         self.verticalLayout_4.setObjectName(u"verticalLayout_4")
         self.horizontalLayout_26 = QHBoxLayout()
@@ -328,6 +335,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_26.addWidget(self.lineEdit_9)
 
+        self.horizontalLayout_26.setStretch(0, 2)
+        self.horizontalLayout_26.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_26)
 
@@ -343,6 +352,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_27.addWidget(self.lineEdit_10)
 
+        self.horizontalLayout_27.setStretch(0, 2)
+        self.horizontalLayout_27.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_27)
 
@@ -358,6 +369,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_28.addWidget(self.lineEdit_11)
 
+        self.horizontalLayout_28.setStretch(0, 2)
+        self.horizontalLayout_28.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_28)
 
@@ -373,6 +386,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_29.addWidget(self.lineEdit_12)
 
+        self.horizontalLayout_29.setStretch(0, 2)
+        self.horizontalLayout_29.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_29)
 
@@ -388,6 +403,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_30.addWidget(self.lineEdit_13)
 
+        self.horizontalLayout_30.setStretch(0, 2)
+        self.horizontalLayout_30.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_30)
 
@@ -403,6 +420,8 @@ class Ui_Config(object):
 
         self.horizontalLayout_31.addWidget(self.lineEdit_14)
 
+        self.horizontalLayout_31.setStretch(0, 2)
+        self.horizontalLayout_31.setStretch(1, 2)
 
         self.verticalLayout_4.addLayout(self.horizontalLayout_31)
 
@@ -410,17 +429,17 @@ class Ui_Config(object):
 
         self.horizontalLayout_25.addWidget(self.scrollArea_4)
 
-        self.tabWidget.addTab(self.tab_6, "")
-        self.tab_5 = QWidget()
-        self.tab_5.setObjectName(u"tab_5")
-        self.horizontalLayout_3 = QHBoxLayout(self.tab_5)
+        self.tabWidget.addTab(self.Templates_tab, "")
+        self.Advanced_tab = QWidget()
+        self.Advanced_tab.setObjectName(u"Advanced_tab")
+        self.horizontalLayout_3 = QHBoxLayout(self.Advanced_tab)
         self.horizontalLayout_3.setObjectName(u"horizontalLayout_3")
-        self.scrollArea_3 = QScrollArea(self.tab_5)
+        self.scrollArea_3 = QScrollArea(self.Advanced_tab)
         self.scrollArea_3.setObjectName(u"scrollArea_3")
         self.scrollArea_3.setWidgetResizable(True)
         self.scrollAreaWidgetContents_3 = QWidget()
         self.scrollAreaWidgetContents_3.setObjectName(u"scrollAreaWidgetContents_3")
-        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 448, 264))
+        self.scrollAreaWidgetContents_3.setGeometry(QRect(0, 0, 596, 269))
         self.verticalLayout_3 = QVBoxLayout(self.scrollAreaWidgetContents_3)
         self.verticalLayout_3.setObjectName(u"verticalLayout_3")
         self.horizontalLayout_19 = QHBoxLayout()
@@ -510,6 +529,7 @@ class Ui_Config(object):
 
         self.horizontalLayout_24.addWidget(self.checkBox)
 
+        self.horizontalLayout_24.setStretch(0, 1)
 
         self.verticalLayout_3.addLayout(self.horizontalLayout_24)
 
@@ -517,60 +537,53 @@ class Ui_Config(object):
 
         self.horizontalLayout_3.addWidget(self.scrollArea_3)
 
-        self.tabWidget.addTab(self.tab_5, "")
+        self.tabWidget.addTab(self.Advanced_tab, "")
 
         self.gridLayout.addWidget(self.tabWidget, 0, 1, 1, 1)
 
-        self.label_22 = QLabel(Config)
-        self.label_22.setObjectName(u"label_22")
-        self.label_22.setLayoutDirection(Qt.LayoutDirection.LeftToRight)
-        self.label_22.setAlignment(Qt.AlignmentFlag.AlignCenter)
 
-        self.gridLayout.addWidget(self.label_22, 1, 1, 1, 1)
-
-
-        self.retranslateUi(Config)
+        self.retranslateUi(Configuration)
 
         self.tabWidget.setCurrentIndex(3)
 
 
-        QMetaObject.connectSlotsByName(Config)
+        QMetaObject.connectSlotsByName(Configuration)
     # setupUi
 
-    def retranslateUi(self, Config):
-        Config.setWindowTitle(QCoreApplication.translate("Config", u"Configuration", None))
-        self.label.setText(QCoreApplication.translate("Config", u"Download mode", None))
-        self.label_2.setText(QCoreApplication.translate("Config", u"Remux mode", None))
-        self.label_3.setText(QCoreApplication.translate("Config", u"Cover format", None))
-        self.label_4.setText(QCoreApplication.translate("Config", u"Song codec", None))
-        self.label_5.setText(QCoreApplication.translate("Config", u"Synced lyrics format", None))
-        self.label_6.setText(QCoreApplication.translate("Config", u"Music video codec", None))
-        self.label_7.setText(QCoreApplication.translate("Config", u"Post video quality", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_3), QCoreApplication.translate("Config", u"Common", None))
-        self.label_8.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_9.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_10.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_11.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_12.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_13.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_14.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_15.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_4), QCoreApplication.translate("Config", u"Paths", None))
-        self.label_16.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_17.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_18.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_19.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_20.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_21.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_6), QCoreApplication.translate("Config", u"Templates", None))
-        self.label_28.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_27.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_26.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_25.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_24.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.label_23.setText(QCoreApplication.translate("Config", u"TextLabel", None))
-        self.checkBox.setText(QCoreApplication.translate("Config", u"CheckBox", None))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.tab_5), QCoreApplication.translate("Config", u"Advanced", None))
-        self.label_22.setText(QCoreApplication.translate("Config", u"GAMDL version:", None))
+    def retranslateUi(self, Configuration):
+        Configuration.setWindowTitle(QCoreApplication.translate("Configuration", u"Configuration", None))
+        self.version_text.setText(QCoreApplication.translate("Configuration", u"GAMDL version:", None))
+        self.version_label.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label.setText(QCoreApplication.translate("Configuration", u"Download mode", None))
+        self.label_2.setText(QCoreApplication.translate("Configuration", u"Remux mode", None))
+        self.label_3.setText(QCoreApplication.translate("Configuration", u"Cover format", None))
+        self.label_4.setText(QCoreApplication.translate("Configuration", u"Song codec", None))
+        self.label_5.setText(QCoreApplication.translate("Configuration", u"Synced lyrics format", None))
+        self.label_6.setText(QCoreApplication.translate("Configuration", u"Music video codec", None))
+        self.label_7.setText(QCoreApplication.translate("Configuration", u"Post video quality", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Common_tab), QCoreApplication.translate("Configuration", u"Common", None))
+        self.label_8.setText(QCoreApplication.translate("Configuration", u"Cookies file", None))
+        self.label_9.setText(QCoreApplication.translate("Configuration", u"Output directory", None))
+        self.label_10.setText(QCoreApplication.translate("Configuration", u"Temporary directory", None))
+        self.label_11.setText(QCoreApplication.translate("Configuration", u"N_m3u8DL-RE binary.", None))
+        self.label_12.setText(QCoreApplication.translate("Configuration", u"Mp4decrypt binary", None))
+        self.label_13.setText(QCoreApplication.translate("Configuration", u"FFmpeg binary", None))
+        self.label_14.setText(QCoreApplication.translate("Configuration", u"MP4Box binary", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Path_Tab), QCoreApplication.translate("Configuration", u"Paths", None))
+        self.label_16.setText(QCoreApplication.translate("Configuration", u"Tracks that are part of an album", None))
+        self.label_17.setText(QCoreApplication.translate("Configuration", u"Tracks that are part of a compilation album", None))
+        self.label_18.setText(QCoreApplication.translate("Configuration", u"Tracks that are part of a single-disc album", None))
+        self.label_19.setText(QCoreApplication.translate("Configuration", u"Tracks that are part of a multi-disc album", None))
+        self.label_20.setText(QCoreApplication.translate("Configuration", u"Tracks that are not part of an album", None))
+        self.label_21.setText(QCoreApplication.translate("Configuration", u"Tracks that are not part of an album", None))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Templates_tab), QCoreApplication.translate("Configuration", u"Templates", None))
+        self.label_28.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label_27.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label_26.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label_25.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label_24.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.label_23.setText(QCoreApplication.translate("Configuration", u"TextLabel", None))
+        self.checkBox.setText("")
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.Advanced_tab), QCoreApplication.translate("Configuration", u"Advanced", None))
     # retranslateUi
 

@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Config</class>
- <widget class="QWidget" name="Config">
+ <class>Configuration</class>
+ <widget class="QDialog" name="Configuration">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>520</width>
-    <height>377</height>
+    <width>640</width>
+    <height>360</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>520</width>
+    <width>640</width>
     <height>360</height>
    </size>
   </property>
@@ -20,28 +20,70 @@
    <string>Configuration</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
+   <item row="1" column="1">
+    <layout class="QHBoxLayout" name="version">
+     <item>
+      <widget class="QLabel" name="version_text">
+       <property name="layoutDirection">
+        <enum>Qt::LayoutDirection::LeftToRight</enum>
+       </property>
+       <property name="text">
+        <string>GAMDL version:</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignRight|Qt::AlignmentFlag::AlignTrailing|Qt::AlignmentFlag::AlignVCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="version_label">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
    <item row="0" column="1">
     <widget class="QTabWidget" name="tabWidget">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
      <property name="currentIndex">
       <number>3</number>
      </property>
-     <widget class="QWidget" name="tab_3">
+     <widget class="QWidget" name="Common_tab">
       <attribute name="title">
        <string>Common</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
         <widget class="QScrollArea" name="scrollArea">
+         <property name="maximumSize">
+          <size>
+           <width>500</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignmentFlag::AlignCenter</set>
          </property>
          <widget class="QWidget" name="scrollAreaWidgetContents">
           <property name="geometry">
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>448</width>
-            <height>308</height>
+            <width>498</width>
+            <height>269</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout">
@@ -149,13 +191,16 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_4">
+     <widget class="QWidget" name="Path_Tab">
       <attribute name="title">
        <string>Paths</string>
       </attribute>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
         <widget class="QScrollArea" name="scrollArea_2">
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarPolicy::ScrollBarAsNeeded</enum>
+         </property>
          <property name="widgetResizable">
           <bool>true</bool>
          </property>
@@ -164,8 +209,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>448</width>
-            <height>278</height>
+            <width>596</width>
+            <height>269</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -174,7 +219,7 @@
              <item>
               <widget class="QLabel" name="label_8">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Cookies file</string>
                </property>
               </widget>
              </item>
@@ -188,7 +233,7 @@
              <item>
               <widget class="QLabel" name="label_9">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Output directory</string>
                </property>
               </widget>
              </item>
@@ -202,7 +247,7 @@
              <item>
               <widget class="QLabel" name="label_10">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Temporary directory</string>
                </property>
               </widget>
              </item>
@@ -216,7 +261,7 @@
              <item>
               <widget class="QLabel" name="label_11">
                <property name="text">
-                <string>TextLabel</string>
+                <string>N_m3u8DL-RE binary.</string>
                </property>
               </widget>
              </item>
@@ -230,7 +275,7 @@
              <item>
               <widget class="QLabel" name="label_12">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Mp4decrypt binary</string>
                </property>
               </widget>
              </item>
@@ -244,7 +289,7 @@
              <item>
               <widget class="QLabel" name="label_13">
                <property name="text">
-                <string>TextLabel</string>
+                <string>FFmpeg binary</string>
                </property>
               </widget>
              </item>
@@ -258,26 +303,12 @@
              <item>
               <widget class="QLabel" name="label_14">
                <property name="text">
-                <string>TextLabel</string>
+                <string>MP4Box binary</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLineEdit" name="lineEdit_7"/>
-             </item>
-            </layout>
-           </item>
-           <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_18" stretch="1,2">
-             <item>
-              <widget class="QLabel" name="label_15">
-               <property name="text">
-                <string>TextLabel</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLineEdit" name="lineEdit_8"/>
              </item>
             </layout>
            </item>
@@ -287,7 +318,13 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_6">
+     <widget class="QWidget" name="Templates_tab">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
       <attribute name="title">
        <string>Templates</string>
       </attribute>
@@ -302,17 +339,17 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>448</width>
-            <height>264</height>
+            <width>596</width>
+            <height>269</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_4">
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_26">
+            <layout class="QHBoxLayout" name="horizontalLayout_26" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_16">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are part of an album</string>
                </property>
               </widget>
              </item>
@@ -322,11 +359,11 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_27">
+            <layout class="QHBoxLayout" name="horizontalLayout_27" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_17">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are part of a compilation album</string>
                </property>
               </widget>
              </item>
@@ -336,11 +373,11 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_28">
+            <layout class="QHBoxLayout" name="horizontalLayout_28" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_18">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are part of a single-disc album</string>
                </property>
               </widget>
              </item>
@@ -350,11 +387,11 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_29">
+            <layout class="QHBoxLayout" name="horizontalLayout_29" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_19">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are part of a multi-disc album</string>
                </property>
               </widget>
              </item>
@@ -364,11 +401,11 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_30">
+            <layout class="QHBoxLayout" name="horizontalLayout_30" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_20">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are not part of an album</string>
                </property>
               </widget>
              </item>
@@ -378,11 +415,11 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_31">
+            <layout class="QHBoxLayout" name="horizontalLayout_31" stretch="2,2">
              <item>
               <widget class="QLabel" name="label_21">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tracks that are not part of an album</string>
                </property>
               </widget>
              </item>
@@ -397,7 +434,7 @@
        </item>
       </layout>
      </widget>
-     <widget class="QWidget" name="tab_5">
+     <widget class="QWidget" name="Advanced_tab">
       <attribute name="title">
        <string>Advanced</string>
       </attribute>
@@ -412,8 +449,8 @@
            <rect>
             <x>0</x>
             <y>0</y>
-            <width>448</width>
-            <height>264</height>
+            <width>596</width>
+            <height>269</height>
            </rect>
           </property>
           <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -488,7 +525,7 @@
             </layout>
            </item>
            <item>
-            <layout class="QHBoxLayout" name="horizontalLayout_24">
+            <layout class="QHBoxLayout" name="horizontalLayout_24" stretch="1,0">
              <item>
               <widget class="QLabel" name="label_23">
                <property name="text">
@@ -499,7 +536,7 @@
              <item>
               <widget class="QCheckBox" name="checkBox">
                <property name="text">
-                <string>CheckBox</string>
+                <string/>
                </property>
               </widget>
              </item>
@@ -511,19 +548,6 @@
        </item>
       </layout>
      </widget>
-    </widget>
-   </item>
-   <item row="1" column="1">
-    <widget class="QLabel" name="label_22">
-     <property name="layoutDirection">
-      <enum>Qt::LayoutDirection::LeftToRight</enum>
-     </property>
-     <property name="text">
-      <string>GAMDL version:</string>
-     </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
-     </property>
     </widget>
    </item>
   </layout>
